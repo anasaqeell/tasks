@@ -1,0 +1,22 @@
+print("Hello, Welcome to the app")
+
+while True:
+    total_amount = float(input("Enter the total amount: "))
+    
+    if total_amount < 0:
+        print("Please enter a valid positive number.")
+        continue
+
+    if total_amount < 500:
+        print("There is no discount.")
+        print(f"Total price is {total_amount}")
+        
+    elif 500 <= total_amount < 2000:
+        final_price = total_amount * 0.85 
+        print("The discount is 15%.")
+        print(f"Total price is {final_price}")
+        
+    else:
+        final_price = total_amount * 0.70
+        print("The discount is 30%.")
+        print(f"Total price is {final_price}")
