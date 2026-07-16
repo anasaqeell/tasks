@@ -1,0 +1,13 @@
+print(" Application Portal: Python Backend Intern ")
+
+knows_coding = input("Do you know Python well? (yes/no): ").strip().lower()
+total_projects = int(input("How many Python projects have you built? (Enter a number): "))
+has_degree = input("Do you have a university degree in tech? (yes/no): ").strip().lower()
+
+is_programmer = (knows_coding == "yes" or knows_coding == "y")
+is_graduated = (has_degree == "yes" or has_degree == "y")
+
+if is_programmer and (total_projects >= 3 or is_graduated):
+    print("\nGreat! You are qualified for the technical interview.")
+else:
+    print("\nUnfortunately, you do not meet the minimum requirements at this time.")
