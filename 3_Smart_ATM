@@ -1,0 +1,42 @@
+print(" Smart ATM Simulator ")
+
+correct_PIN = "2007"
+balance = 45000.0
+
+user_pin = input("Please enter your PIN: ").strip()
+
+if user_pin == correct_PIN:
+    print("\nIdentity verified successfully!")
+    
+    while True:
+        print("\nChoose your transaction:")
+        print("1. Withdraw Cash")
+        print("2. Check Balance")
+        print("3. Exit")
+        
+        choice = input("Enter option number (1, 2, or 3): ").strip()
+        
+        if choice == "2":
+            print(f"\nYour current balance is: {balance:.2f} EGP")
+            
+        elif choice == "1":
+            withdraw_amount = float(input("\nEnter the amount to withdraw: "))
+            
+            if withdraw_amount > balance:
+                print(" Transaction failed: Insufficient balance.")
+            elif withdraw_amount <= 0:
+                print(" Transaction failed: Amount must be greater than zero.")
+            else:
+                balance -= withdraw_amount 
+                print(" Transaction successful! Please take your cash.")
+                print(f" Your remaining balance is: {balance:.2f} EGP")
+                
+        elif choice == "3":
+            print("\nThank you for using our ATM. Have a great day!")
+            break
+            
+        else:
+            print("\nInvalid option. Please try again.")
+            
+else:
+    print("Incorrect PIN. Access denied.")
